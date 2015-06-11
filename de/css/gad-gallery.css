@@ -1,0 +1,175 @@
+.gad-gallery {
+  width: 960px;
+  /*height: 750px;*/
+}
+.gad-gallery, .gad-gallery * {
+  margin: 0;
+  padding: 0;
+}
+.gad-gallery .gad-image-wrapper {
+  width: 100%;
+  height: 750px;
+  margin-bottom: 10px;
+  position: relative;
+  overflow: hidden;
+}
+.gad-gallery .gad-image-wrapper .gad-loader {
+  position: absolute;
+  z-index: 80010;
+  top: 48%;
+  left: 48%;
+  border: 1px solid #CCC;
+}
+.gad-gallery .gad-image-wrapper .gad-next {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 25%;
+  height: 100%;
+  cursor: pointer;
+  display: block;
+  z-index: 80200;
+}
+.gad-gallery .gad-image-wrapper .gad-prev {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 25%;
+  height: 100%;
+  cursor: pointer;
+  display: block;
+  z-index: 80200;
+}
+.gad-gallery .gad-image-wrapper .gad-prev, .gad-gallery .gad-image-wrapper .gad-next {
+  /* Or else IE will hide it */
+  background: url(../../images/trans.gif);
+}
+.gad-gallery .gad-image-wrapper .gad-prev .gad-prev-image, .gad-gallery .gad-image-wrapper .gad-next .gad-next-image {
+  background: url(../../images/ad_prev.png);
+  width: 30px;
+  height: 30px;
+  display: none;
+  position: absolute;
+  top: 47%;
+  left: 0;
+  z-index: 80101;
+}
+.gad-gallery .gad-image-wrapper .gad-next .gad-next-image {
+  background: url(../../images/ad_next.png);
+  width: 30px;
+  height: 30px;
+  right: 0;
+  left: auto;
+}
+.gad-gallery .gad-image-wrapper .gad-image {
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  z-index: 80009;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+.gad-gallery .gad-image-wrapper .gad-image a img {
+  border: 0;
+  box-shadow:0 1px 2px #eee;
+}
+.gad-gallery .gad-image-wrapper .gad-image .gad-image-description {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  padding: 7px;
+  text-align: left;
+  width: 100%;
+  z-index: 80002;
+  background: url(../../images/opa75.png);
+  color: #333;
+}
+* html .gad-gallery .gad-image-wrapper .gad-image .gad-image-description {
+  background: none;
+  filter:progid:DXImageTransform.Microsoft.AlphaImageLoader (enabled=true, sizingMethod=scale, src='opa75.png');
+}
+.gad-gallery .gad-image-wrapper .gad-image .gad-image-description .gad-description-title {
+  display: block;
+}
+.gad-gallery .gad-controls {
+  height: 20px;
+}
+.gad-gallery .gad-info {
+  float: left;
+}
+.gad-gallery .gad-slideshow-controls {
+  float: right;
+}
+ .gad-gallery .gad-slideshow-controls .gad-slideshow-start, .gad-gallery .gad-slideshow-controls .gad-slideshow-stop {
+   padding-left: 5px;
+   cursor: pointer;
+ }
+ .gad-gallery .gad-slideshow-controls .gad-slideshow-countdown {
+   padding-left: 5px;
+   font-size: 0.9em;
+ }
+.gad-gallery .gad-slideshow-running .gad-slideshow-start {
+  cursor: default;
+  font-style: italic;
+}
+.gad-gallery .gad-nav {
+  width: 90%;
+	margin: 0px 5%;
+  position: absolute;
+	z-index: 80009;
+	bottom: 10px;
+}
+.gad-gallery .gad-forward, .gad-gallery .gad-back {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  z-index: 80010;
+}
+/* IE 6 doesn't like height: 100% */
+* html .gad-gallery .gad-forward, .gad-gallery .gad-back {
+  height: 100px;
+}
+.gad-gallery .gad-back {
+  cursor: pointer;
+  left: -20px;
+  width: 13px;
+  display: block;
+  background: url(../../images/gad_scroll_back.png) 0px 22px no-repeat;
+}
+.gad-gallery .gad-forward {
+  cursor: pointer;
+  display: block;
+  right: -20px;
+  width: 13px;
+  background: url(../../images/gad_scroll_forward.png) 0px 22px no-repeat;
+}
+.gad-gallery .gad-nav .gad-thumbs {
+  overflow: hidden;
+  width: 100%;
+}
+.gad-gallery .gad-thumbs .gad-thumb-list {
+  float: left;
+  width: 9000px;
+  list-style: none;
+}
+.gad-gallery .gad-thumbs li {
+  float: left;
+  padding-right: 5px;
+}
+.gad-gallery .gad-thumbs li a {
+  display: block;
+}
+.gad-gallery .gad-thumbs li a img {
+  border: 2px solid #CCC;
+  display: block;
+  border-radius: 3px;
+}
+.gad-gallery .gad-thumbs li a.gad-active img {
+  border: 2px solid #164e6b;
+}
+/* Can't do display none, since Opera won't load the images then */
+.gad-preloads {
+  position: absolute;
+  left: -9000px;
+  top: -9000px;
+}
